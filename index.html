@@ -8,26 +8,58 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="timer">
-    <div class="display">
-      <div class="unit">
-        <span class="value" id="hours">00</span>
-        <span class="label">hours</span>
+  <div class="app">
+    <div class="mode-switcher" role="tablist" aria-label="Choose timer or clock">
+      <button type="button" class="mode-btn active" role="tab" aria-selected="true" data-mode="clock" id="clockTab">Clock</button>
+      <button type="button" class="mode-btn" role="tab" aria-selected="false" data-mode="timer" id="timerTab">Timer</button>
+    </div>
+
+    <div class="panel-container">
+    <div class="timer-view hidden" id="timerView" role="tabpanel" aria-labelledby="timerTab">
+      <div class="display">
+        <div class="unit">
+          <span class="value" id="hours">00</span>
+          <span class="label">hours</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="unit">
+          <span class="value" id="minutes">00</span>
+          <span class="label">minutes</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="unit">
+          <span class="value" id="seconds">00</span>
+          <span class="label">seconds</span>
+        </div>
       </div>
-      <span class="separator">:</span>
-      <div class="unit">
-        <span class="value" id="minutes">00</span>
-        <span class="label">minutes</span>
+      <div class="controls">
+        <button class="start" id="mainBtn">Start</button>
+        <button class="reset" id="resetBtn" disabled>Reset</button>
+        <button class="lap" id="lapBtn" disabled>Lap</button>
       </div>
-      <span class="separator">:</span>
-      <div class="unit">
-        <span class="value" id="seconds">00</span>
-        <span class="label">seconds</span>
+      <div class="lap-list-container" id="lapListContainer" aria-live="polite">
+        <ul class="lap-list" id="lapList"></ul>
       </div>
     </div>
-    <div class="controls">
-      <button class="start" id="mainBtn">Start</button>
-      <button class="reset" id="resetBtn" disabled>Reset</button>
+
+    <div class="clock-view" id="clockView" role="tabpanel" aria-labelledby="clockTab">
+      <div class="display">
+        <div class="unit">
+          <span class="value" id="clockHours">00</span>
+          <span class="label">hours</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="unit">
+          <span class="value" id="clockMinutes">00</span>
+          <span class="label">minutes</span>
+        </div>
+        <span class="separator">:</span>
+        <div class="unit">
+          <span class="value" id="clockSeconds">00</span>
+          <span class="label">seconds</span>
+        </div>
+      </div>
+    </div>
     </div>
   </div>
 
