@@ -9,8 +9,8 @@ body {
   align-items: center;
   justify-content: center;
   font-family: Helvetica, Arial, sans-serif;
-  background: #0f0f12;
-  color: #e4e4e7;
+  background: #0d0d0f;
+  color: #e8e8ec;
 }
 .timer {
   text-align: center;
@@ -34,20 +34,19 @@ body {
 .value {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
-  color: #fafafa;
+  color: #f4f4f5;
 }
 .label {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 400;
   font-size: 0.2em;
-  text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: #71717a;
+  color: #8b8b92;
   margin-top: 0.2em;
 }
 .separator {
   font-weight: 300;
-  color: #52525b;
+  color: #3f3f46;
   margin: 0 0.1em;
 }
 .controls {
@@ -64,31 +63,42 @@ button {
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
-  transition: transform 0.1s, box-shadow 0.15s;
+  transition: transform 0.1s, box-shadow 0.15s, background-color 0.15s;
+  outline: none;
 }
-button:active {
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+button:active:not(:disabled) {
   transform: scale(0.98);
 }
 .start {
-  background: #22c55e;
-  color: #052e16;
+  background: #16a34a;
+  color: #ecfdf5;
 }
-.start:hover {
-  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.35);
+.start:hover:not(:disabled),
+.start:focus-visible:not(:disabled) {
+  background: #15803d;
+  box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.5);
 }
 .pause {
-  background: #ef4444;
-  color: #fef2f2;
+  background: #ca8a04;
+  color: #1c1917;
 }
-.pause:hover:not(:disabled) {
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
+.pause:hover:not(:disabled),
+.pause:focus-visible:not(:disabled) {
+  background: #a16207;
+  box-shadow: 0 0 0 4px rgba(202, 138, 4, 0.55);
 }
 .reset {
-  background: #71717a;
-  color: #fafafa;
+  background: #3f3f46;
+  color: #e4e4e7;
 }
-.reset:hover:not(:disabled) {
-  box-shadow: 0 0 0 3px rgba(113, 113, 122, 0.35);
+.reset:hover:not(:disabled),
+.reset:focus-visible:not(:disabled) {
+  background: #52525b;
+  box-shadow: 0 0 0 4px rgba(161, 161, 170, 0.4);
 }
 .start:disabled,
 .pause:disabled,
